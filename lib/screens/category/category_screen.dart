@@ -1,13 +1,18 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:treva/constants/constants.dart';
 
 class CategoryScreen extends StatelessWidget {
+  final String bannerImage;
+  final String name;
+  CategoryScreen(this.name, this.bannerImage);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          "Man",
+          name,
           style: TextStyle(color: Colors.black),
         ),
         elevation: 0,
@@ -26,10 +31,12 @@ class CategoryScreen extends StatelessWidget {
             height: 250,
             width: double.infinity,
             decoration: BoxDecoration(
-                image: DecorationImage(
-              image: AssetImage("assets/images/areamain_banner2.jpg"),
-              fit: BoxFit.cover,
-            )),
+              image: DecorationImage(
+                image: CachedNetworkImageProvider(
+                    serverUrl + "uploads/categories/" + this.bannerImage),
+                fit: BoxFit.cover,
+              ),
+            ),
           ),
           SizedBox(
             height: 30,

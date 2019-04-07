@@ -20,12 +20,10 @@ class ProductDetailScreen extends StatelessWidget {
         backgroundColor: Colors.white10,
       ),
       bottomNavigationBar: Container(
-        height: 65,
         decoration: BoxDecoration(
           border: Border(
             top: BorderSide(
               color: Colors.grey,
-              width: 3,
             ),
           ),
         ),
@@ -33,6 +31,7 @@ class ProductDetailScreen extends StatelessWidget {
           children: <Widget>[
             Expanded(
               child: FlatButton.icon(
+                padding: EdgeInsets.symmetric(vertical: 15),
                 icon: Icon(Icons.local_offer),
                 label: Text("Buy now"),
                 onPressed: () {},
@@ -40,6 +39,7 @@ class ProductDetailScreen extends StatelessWidget {
             ),
             Expanded(
               child: FlatButton.icon(
+                padding: EdgeInsets.symmetric(vertical: 15),
                 icon: Icon(Icons.add_shopping_cart),
                 label: Text("Add"),
                 onPressed: () {},
